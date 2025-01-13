@@ -10,7 +10,7 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
 	   $data = htmlspecialchars($data);
 	   return $data;
 	}
-
+	//comment
 	$uname = validate($_POST['uname']);
 	$pass = validate($_POST['password']);
 
@@ -29,7 +29,6 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
 			$row = mysqli_fetch_assoc($result);
             if ($row['Username'] === $uname && $row['Password'] === $pass) {
             	$_SESSION['Username'] = $row['Username'];
-            	$_SESSION['name'] = $row['name'];
 				$_SESSION['Password'] = $row['Password'];
             	header("Location: home.php");
 		        exit();
